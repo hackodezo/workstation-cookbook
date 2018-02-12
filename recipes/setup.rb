@@ -1,21 +1,11 @@
-package 'tree' do
+file "/home/vagrant/hello.txt" do 
+  content "hackodezo is awesome"
+end
+
+package "nginx" do
   action :install
-end
-
-package 'git' do
-  action :install
-end
-
-package 'nginx' do
- action :install
-end
-
-file '/etc/motd' do 
- content 'This is property of hackodezo'
- owner 'root'
- group 'root'
 end
 
 service 'nginx' do
- action :restart
+  action :restart
 end
